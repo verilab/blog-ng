@@ -14,6 +14,7 @@
   <!--<link rel="stylesheet" href="/index.css">-->
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/code.css">
+  <link rel="stylesheet" href="/github_markdown.css">
 </head>
 <body>
 <div class="section">
@@ -55,27 +56,28 @@
           <div class="col-md-12">
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h2 class="panel-title">
+                <h3 class="panel-title">
                   <a v-link="{ path: '/category/Dev' }">Dev</a>
                   &amp;
                   <a v-link="{ path: '/category/Tech' }">Tech</a>
                   <i class="fa fa-fw fa-angle-right"></i>
-                  <a href="#">FusionCache 实现思路和使用方法</a>
-                </h2>
+                  <!--<a href="#">FusionCache 实现思路和使用方法</a>-->
+                </h3>
               </div>
-              <div class="panel-body">
+              <div class="panel-body markdown-body">
+                <h1>FusionCache 实现思路和使用方法</h1>
                 <p>前几天看《Android 开发艺术探索》关于 Bitmap 加载的那章，里面讲解了一个内存和磁盘二级缓存的 ImageLoader
                   的实现方法，然后就突然想自己写一个内存+磁盘的混合缓存框架，正好平时上课闲得慌，就在课上构思，最终在昨天完成了这个
                   FusionCache。虽然注释写得挺多，但还是怕以后看不懂，所以这里记录一下实现思路。</p>
                 <h2>实现思路</h2>
                 <p>首先这个缓存应该基于键值对，使用起来方便嘛，作为一个缓存，本身就是为了增强应用使用体验而用的，并不是什么逻辑上的核心部件，那么就应该用起来越简单越好。</p>
                 <p>……</p>
-                <a href="#">阅读更多</a>
+                <a href="#">继续阅读</a>
               </div>
               <div class="panel-footer">
                 <span><i class="fa fa-fw fa-user"></i>Richard Chien</span>
                 <span><i class="fa fa-fw fa-calendar"></i>2016.6.6</span>
-                <span><i class="fa fa-fw fa-edit"></i>2016.6.10</span>
+                <span><i class="fa fa-fw fa-refresh"></i>2016.6.10</span>
                 <span><i class="fa fa-fw fa-tags"></i>
                       <a v-link="{ path: '/tag/Android' }">Android</a>,
                       <a v-link="{ path: '/tag/FusionCache' }">FusionCache</a>,
@@ -84,13 +86,14 @@
             </div>
             <div class="panel panel-primary">
               <div class="panel-heading">
-                <h2 class="panel-title">
+                <h3 class="panel-title">
                   <a v-link="{ path: '/category/Dev' }">Dev</a>
                   <i class="fa fa-fw fa-angle-right"></i>
-                  <a href="#">CentOS 上安装 shadowsocks-manyuser 实现 Shadowsocks 多人共享平台</a>
-                </h2>
+                  <!--<a href="#">CentOS 上安装 shadowsocks-manyuser 实现 Shadowsocks 多人共享平台</a>-->
+                </h3>
               </div>
-              <div class="panel-body">
+              <div class="panel-body markdown-body">
+                <h1>CentOS 上安装 shadowsocks-manyuser 实现 Shadowsocks 多人共享平台</h1>
                 <h2>1. 创建数据库</h2>
                 <p>首先创建数据库
                   <code>shadowsocks</code>，然后下载
@@ -115,7 +118,7 @@ sed -i <span class="s2">"s/My_Passwd/</span><span class="nv">$ss_mypassword</spa
                 </div>
                 <p>改完后，导入数据库，并重启 mysql。</p>
                 <p>……</p>
-                <a href="#">阅读更多</a>
+                <a href="#">继续阅读</a>
               </div>
               <div class="panel-footer">
                     <span>
@@ -154,7 +157,7 @@ sed -i <span class="s2">"s/My_Passwd/</span><span class="nv">$ss_mypassword</spa
           <div class="panel-body" style="padding: 0;">
             <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="{{ widgetWidth }}"
                     height="450"
-                    src="http://music.163.com/outchain/player?type=0&amp;id=87165194&amp;auto=1&amp;height=430"></iframe>
+                    src="http://music.163.com/outchain/player?type=0&amp;id=87165194&amp;auto=0&amp;height=430"></iframe>
           </div>
         </div>
       </div>

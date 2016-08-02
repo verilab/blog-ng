@@ -10,7 +10,7 @@ var App = Vue.extend({
     data: function () {
         return {
             title: 'Title',
-            widgetWidth: document.querySelector('#sidebar .panel-body').offsetWidth
+            widgetWidth: this.getWidgetWidth()
         }
     },
     computed: {
@@ -38,8 +38,11 @@ var App = Vue.extend({
         //         this.title = json.site.title;
         //     });
         // }
+        getWidgetWidth: function () {
+            return document.querySelector('#sidebar .panel-body').offsetWidth;
+        },
         handleResize: function () {
-            this.widgetWidth = document.querySelector('#sidebar .panel-body').offsetWidth;
+            this.widgetWidth = this.getWidgetWidth();
         }
     },
     ready: function () {
