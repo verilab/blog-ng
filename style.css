@@ -1,19 +1,19 @@
-a {
-    display: inline-block;
-    margin: 5px;
-    font-family: "Exo", sans-serif;
-    font-size: 14px;
-    color: #039be5;
-    text-decoration: none;
-    -webkit-transition: color 0.3s ease 0s;
-    -moz-transition: color 0.3s ease 0s;
-    -ms-transition: color 0.3s ease 0s;
-    -o-transition: color 0.3s ease 0s;
-    transition: color 0.3s ease 0s;
-}
+/*a {*/
+    /*display: inline-block;*/
+    /*margin: 5px;*/
+    /*font-family: "Exo", sans-serif;*/
+    /*font-size: 14px;*/
+    /*color: #039be5;*/
+    /*text-decoration: none;*/
+    /*-webkit-transition: color 0.3s ease 0s;*/
+    /*-moz-transition: color 0.3s ease 0s;*/
+    /*-ms-transition: color 0.3s ease 0s;*/
+    /*-o-transition: color 0.3s ease 0s;*/
+    /*transition: color 0.3s ease 0s;*/
+/*}*/
 
-a:hover {
-    color: #01579b;
-    text-decoration: underline;
-    cursor: pointer;
-}
+/*a:hover {*/
+    /*color: #01579b;*/
+    /*text-decoration: underline;*/
+    /*cursor: pointer;*/
+/*}*/

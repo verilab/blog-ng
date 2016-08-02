@@ -3,30 +3,50 @@ Vue.use(VueResource);
 
 Vue.http.headers.common['Accept'] = 'application/json';
 
-var app = Vue.extend({
+var App = Vue.extend({
     created: function () {
         this.init();
     },
     data: function () {
         return {
-            title: 'Title'
+            title: 'Title',
+            widgetWidth: document.querySelector('#sidebar .panel-body').offsetWidth
         }
+    },
+    computed: {
+        // siteTitle: function () {
+        //     document.title = this.title;
+        //     return this.title;
+        // },
+        // widgetWidth: function () {
+        //     var firstWidget = document.querySelector('#sidebar .panel-body');
+        //     return firstWidget.offsetWidth;
+        // }
     },
     methods: {
         init: function () {
-            console.log(window.location);
-            getJSON(apiUrl(window.location.pathname), function (json) {
-                console.log(json);
-            });
+            // console.log(window.location);
+            // getJSON(apiUrl(window.location.pathname), function (json) {
+            //     console.log(json);
+            // });
         },
-        post: function (event) {
-            var url = apiUrl(event.target.getAttribute('href'));
-            console.log(url);
-            getJSON(url, function (json) {
-                console.log(json);
-                this.title = json.site.title;
-            });
+        // post: function (event) {
+        //     var url = apiUrl(event.target.getAttribute('href'));
+        //     console.log(url);
+        //     getJSON(url, function (json) {
+        //         console.log(json);
+        //         this.title = json.site.title;
+        //     });
+        // }
+        handleResize: function () {
+            this.widgetWidth = document.querySelector('#sidebar .panel-body').offsetWidth;
         }
+    },
+    ready: function () {
+        window.addEventListener('resize', this.handleResize)
+    },
+    beforeDestroy: function () {
+        window.removeEventListener('resize', this.handleResize)
     }
 });
 
@@ -54,6 +74,7 @@ var Index = Vue.extend({
                     const json = response.json();
                     console.log(json);
                     this.count = json.page.entries.length;
+                    router.app.title = json.site.title;
                 });
         }
     }
@@ -73,4 +94,4 @@ router.map({
     }
 });
 
-router.start(app, '#app');
+router.start(App, '#app');
