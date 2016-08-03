@@ -10,46 +10,27 @@ var App = Vue.extend({
     data: function () {
         return {
             title: 'Title',
-            widgetWidth: this.getWidgetWidth()
+            widgetWidth: 330,
         }
     },
-    computed: {
-        // siteTitle: function () {
-        //     document.title = this.title;
-        //     return this.title;
-        // },
-        // widgetWidth: function () {
-        //     var firstWidget = document.querySelector('#sidebar .panel-body');
-        //     return firstWidget.offsetWidth;
-        // }
-    },
+    computed: {},
     methods: {
         init: function () {
-            // console.log(window.location);
-            // getJSON(apiUrl(window.location.pathname), function (json) {
-            //     console.log(json);
-            // });
+            this.updateWidgetWIdth();
         },
-        // post: function (event) {
-        //     var url = apiUrl(event.target.getAttribute('href'));
-        //     console.log(url);
-        //     getJSON(url, function (json) {
-        //         console.log(json);
-        //         this.title = json.site.title;
-        //     });
-        // }
-        getWidgetWidth: function () {
-            return document.querySelector('#sidebar .panel-body').offsetWidth;
+        updateWidgetWIdth: function () {
+            this.widgetWidth = document.querySelector('#sidebar .panel-body').offsetWidth;
         },
-        handleResize: function () {
-            this.widgetWidth = this.getWidgetWidth();
+        handleWindowResize: function (event) {
+            console.log(event);
+            this.updateWidgetWIdth();
         }
     },
     ready: function () {
-        window.addEventListener('resize', this.handleResize)
+        window.addEventListener('resize', this.handleWindowResize)
     },
     beforeDestroy: function () {
-        window.removeEventListener('resize', this.handleResize)
+        window.removeEventListener('resize', this.handleWindowResize)
     }
 });
 

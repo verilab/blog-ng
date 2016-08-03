@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+  <script src="//cdn.bootcss.com/vue/1.0.26/vue.js"></script>
+  <script src="//cdn.bootcss.com/vue-router/0.7.13/vue-router.js"></script>
+  <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.js"></script>
+  <!--<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>-->
+  <!--<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>-->
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+  <link href="https://bootswatch.com/paper/bootstrap.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="/index.css">-->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/code.css">
+  <link rel="stylesheet" href="/css/github_markdown.css">
+</head>
+<body>
+<div class="section">
+  <div id="app" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Project RC
+              <br>
+              <small>#include &lt;stdrc.h&gt;</small>
+            </h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="nav nav-pills">
+              <li v-link-active>
+                <a v-link="{ path: '/template.html', exact: true, activeClass: 'active' }">HOME</a>
+              </li>
+              <li v-link-active>
+                <a v-link="{ path: '/template.html/about/', activeClass: 'active' }">ABOUT</a>
+              </li>
+              <li v-link-active>
+                <a v-link="{ path: '/template.html/friends/', activeClass: 'active' }">FRIENDS</a>
+              </li>
+              <li v-link-active>
+                <a v-link="{ path: '/template.html/cv/', activeClass: 'active' }">RESUME</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <a v-link="{ path: '/category/Dev' }">Dev</a>
+              &amp;
+              <a v-link="{ path: '/category/Tech' }">Tech</a>
+              <i class="fa fa-fw fa-angle-right"></i>
+              <!--<a href="#">FusionCache 实现思路和使用方法</a>-->
+            </h3>
+          </div>
+          <div class="panel-body markdown-body">
+            <h1>FusionCache 实现思路和使用方法</h1>
+            <p>前几天看《Android 开发艺术探索》关于 Bitmap 加载的那章，里面讲解了一个内存和磁盘二级缓存的 ImageLoader
+              的实现方法，然后就突然想自己写一个内存+磁盘的混合缓存框架，正好平时上课闲得慌，就在课上构思，最终在昨天完成了这个
+              FusionCache。虽然注释写得挺多，但还是怕以后看不懂，所以这里记录一下实现思路。</p>
+            <h2>实现思路</h2>
+            <p>首先这个缓存应该基于键值对，使用起来方便嘛，作为一个缓存，本身就是为了增强应用使用体验而用的，并不是什么逻辑上的核心部件，那么就应该用起来越简单越好。</p>
+            <p>……</p>
+            <a href="#">继续阅读</a>
+          </div>
+          <div class="panel-footer">
+            <span><i class="fa fa-fw fa-user"></i>Richard Chien</span>
+            <span><i class="fa fa-fw fa-calendar"></i>2016.6.6</span>
+            <span><i class="fa fa-fw fa-refresh"></i>2016.6.10</span>
+            <span><i class="fa fa-fw fa-tags"></i><a v-link="{ path: '/tag/Android' }">Android</a>, <a
+                    v-link="{ path: '/tag/FusionCache' }">FusionCache</a>, <a v-link="{ path: '/tag/Cache' }">Cache</a></span>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <a v-link="{ path: '/category/Dev' }">Dev</a>
+              <i class="fa fa-fw fa-angle-right"></i>
+              <!--<a href="#">CentOS 上安装 shadowsocks-manyuser 实现 Shadowsocks 多人共享平台</a>-->
+            </h3>
+          </div>
+          <div class="panel-body markdown-body">
+            <h1>CentOS 上安装 shadowsocks-manyuser 实现 Shadowsocks 多人共享平台</h1>
+            <h2>1. 创建数据库</h2>
+            <p>首先创建数据库
+              <code>shadowsocks</code>，然后下载
+              <a href="https://raw.githubusercontent.com/fanyueciyuan/eazy-for-ss/master/Our-Private-Panel/shadowsocks.sql"
+                 target="_blank">https://raw.githubusercontent.com/fanyueciyuan/eazy-for-ss/master/Our-Private-Panel/shadowsocks.sql</a>，做一定的修改，参考下面命令：
+            </p>
+            <div class="highlight"><pre><span></span><span class="nv">username</span><span class="o">=</span><span
+                    class="s2">"登录网站用户名"</span>
+<span class="nv">password</span><span class="o">=</span><span class="s2">"登录网站明文密码"</span>
+<span class="nv">My_Domain</span><span class="o">=</span><span class="s2">"自己的ip或者域名"</span>
+<span class="nv">ss_mypassword</span><span class="o">=</span><span class="s2">"ss连接密码"</span>
+<span class="nv">Panel_Admin_Passwd</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> -n <span
+                      class="s2">"</span><span class="nv">$password</span><span class="s2">"</span><span
+                      class="p">|</span>md5sum<span class="p">|</span>cut -d <span class="s1">' '</span> -f1<span
+                      class="sb">`</span>
+sed -i <span class="s2">"s/25d55ad283aa400af464c76d713c07ad/</span><span class="nv">$Panel_Admin_Passwd</span><span
+                      class="s2">/"</span> shadowsocks.sql
+sed -i <span class="s2">"s/Our_Private_Panel_Domain/</span><span class="nv">$My_Domain</span><span class="s2">/"</span> shadowsocks.sql
+sed -i <span class="s2">"s/Our_Private_Panel/</span><span class="nv">$username</span><span class="s2">/"</span> shadowsocks.sql
+sed -i <span class="s2">"s/My_Passwd/</span><span class="nv">$ss_mypassword</span><span class="s2">/"</span> shadowsocks.sql
+</pre>
+            </div>
+            <p>改完后，导入数据库，并重启 mysql。</p>
+            <p>……</p>
+            <a href="#">继续阅读</a>
+          </div>
+          <div class="panel-footer">
+            <span><i class="fa fa-fw fa-user"></i>Richard Chien</span>
+            <span><i class="fa fa-fw fa-calendar"></i>2016.5.10</span>
+            <span><i class="fa fa-fw fa-tags"></i><a v-link="{ path: '/tag/Shadowsocks' }">Shadowsocks</a>, <a
+                    v-link="{ path: '/tag/Linux' }">Linux</a></span>
+          </div>
+        </div>
+        <ul class="pager">
+          <li class="previous disabled">
+            <a v-link="">← Older</a>
+          </li>
+          <li class="next">
+            <a v-link="{ path: '/page/2' }">Newer →</a>
+          </li>
+        </ul>
+      </div>
+      <div id="sidebar" class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-body">
+            <p>This is a sidebar widget.</p>
+          </div>
+        </div>
+        <div class="panel panel-primary text-center hidden-sm hidden-xs">
+          <div class="panel-body" style="padding: 0;">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="{{ widgetWidth }}"
+                    height="450"
+                    src="http://music.163.com/outchain/player?type=0&amp;id=87165194&amp;auto=0&amp;height=430"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section">
+          <div class="container">
+            <hr>
+            <div class="row">
+              <div class="col-sm-12 text-center">Powered by <a href="#">Blog A</a> and <a href="#">BlogNG</a>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--<script src="/utils.js"></script>-->
+<script src="/template.js"></script>
+</body>
+</html>

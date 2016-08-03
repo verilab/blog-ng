@@ -1,0 +1,24 @@
+body {
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+}
+
+a {
+    -webkit-transition: color 300ms;
+    -moz-transition: color 300ms;
+    -ms-transition: color 300ms;
+    -o-transition: color 300ms;
+    transition: color 300ms;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+.site-header h1 a:hover, .site-header h1 a:focus, h1 {
+    color: #e95420;
+}
+
+.nav-container {
+    padding: 15px 15px 20px;
+}
