@@ -3,6 +3,11 @@ body {
     padding-bottom: 6vh;
 }
 
+div {
+    word-wrap: break-word;
+    word-break: normal;
+}
+
 a {
     -webkit-transition: color 300ms;
     -moz-transition: color 300ms;

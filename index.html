@@ -8,7 +8,7 @@
   <meta http-equiv="cleartype" content="on">
   <link rel="alternate" type="application/atom+xml" href="/api/feed.xml"/>
 
-  <!-- Link common CSS and JavaScript files-->
+  <!-- Link common CSS and JavaScript files -->
   <script src="//cdn.bootcss.com/vue/1.0.26/vue.min.js"></script>
   <script src="//cdn.bootcss.com/vue-router/0.7.13/vue-router.min.js"></script>
   <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
@@ -79,32 +79,7 @@
         <router-view></router-view>
       </div>
       <div id="sidebar" class="col-md-4">
-        <div class="panel panel-primary">
-          <div class="panel-body">
-            <h4>Richard Chien<br>
-              <small>richardchien</small>
-            </h4>
-            <p>GitHub: <a href="http://github.com/richardchien">richardchien</a></p>
-            <p>Telegram: <a href="https://telegram.me/richardchien">@richardchien</a></p>
-            <p>这里是我的博客，欢迎你的来访，我会在这里写一些技术笔记和感想。</p>
-            <p>除非特别说明，文章均默认采用
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0 协议</a>。
-            </p>
-          </div>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-body">
-            <h4>友情链接<br>
-              <small>friend links</small>
-            </h4>
-            <ul>
-              <li><a href="http://tong-kuo.tumblr.com/">Tong Kuo</a></li>
-              <li><a href="https://www.puteulanus.com/">创世神域</a></li>
-              <li><a href="https://blog.ntzyz.io/">namespace ntzyz;</a></li>
-              <li><a href="http://www.orangejoy.moe/">404 BeenFound</a></li>
-            </ul>
-          </div>
-        </div>
+        <sidebar-content></sidebar-content>
       </div>
     </div>
   </div>
@@ -118,9 +93,10 @@
             <hr>
             <div class="row">
               <div class="col-sm-12 text-center">
-                <span>Copyright 2016 Richard Chien.</span>
+                <span>Copyright 2016 {{ site.author }}.</span>
                 <br class="hidden-sm hidden-md hidden-lg">
-                <span>Powered by <a href="#">BlogA</a> and <a href="#">BlogNG</a>.</span>
+                <span>Powered by <a href="https://github.com/richardchien/blog-a">BlogA</a> and <a
+                        href="https://github.com/richardchien/blog-ng">BlogNG</a>.</span>
               </div>
             </div>
           </div>
@@ -129,6 +105,9 @@
     </div>
   </div>
 </footer>
+
+<!-- DON'T CHANGE THE ORDER OF THESE SCRIPTS -->
+<script src="/js/custom.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/template.js"></script>
 <script src="/js/route.js"></script>
