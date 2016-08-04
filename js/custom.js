@@ -1,7 +1,7 @@
 var handleResize = function (event) {
     var widget = document.querySelector('#sidebar .panel-body');
     if (widget) {
-        var widgetWidth = widget.offsetWidth;
+        var widgetWidth = widget.clientWidth;
         document.getElementById('netease-player').setAttribute('style', 'width: ' + widgetWidth + 'px');
     }
 };
