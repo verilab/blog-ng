@@ -9,11 +9,11 @@ div {
 }
 
 a {
-    -webkit-transition: color 300ms;
-    -moz-transition: color 300ms;
-    -ms-transition: color 300ms;
-    -o-transition: color 300ms;
-    transition: color 300ms;
+    -webkit-transition: color 300ms ease;
+    -moz-transition: color 300ms ease;
+    -ms-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+    transition: color 300ms ease;
 }
 
 a:hover, a:focus {
