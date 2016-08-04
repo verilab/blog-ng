@@ -8,7 +8,6 @@ var handleResize = function (event) {
 
 // Don't remove this function!
 var handleReady = function () {
-    console.log('handleReady');
     var elems = document.getElementsByTagName('a');
     for (var i = 0; i < elems.length; i++) {
         if (elems[i].href.length > 0 && elems[i].href.indexOf(document.domain) < 0) {
@@ -16,12 +15,11 @@ var handleReady = function () {
         }
     }
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    // handleResize();
+    // window.addEventListener('resize', handleResize);
 };
 
 // Don't remove this function!
 var handleBeforeDestroy = function () {
-    console.log('beforeDestroy');
-    window.removeEventListener('resize', handleResize);
+    // window.removeEventListener('resize', handleResize);
 };
