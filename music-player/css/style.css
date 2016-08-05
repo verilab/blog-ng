@@ -38,9 +38,9 @@
     color: #444;
 }
 
-.ttw-music-player .control-btn:hover {
-    color: #e95420;
-}
+/*.ttw-music-player .control-btn:hover {*/
+    /*color: #e95420;*/
+/*}*/
 
 .ttw-music-player .progress-wrapper {
     height: 10px;
@@ -90,9 +90,9 @@
     list-style-position: inside;
 }
 
-.ttw-music-player .tracklist li:hover {
-    color: #e95420;
-}
+/*.ttw-music-player .tracklist li:hover {*/
+    /*color: #e95420;*/
+/*}*/
 
 .ttw-music-player .tracklist .title {
     width: 164px;
@@ -105,11 +105,10 @@
     padding-left: 7px;
 }
 
-.ttw-music-player li.playing,
-.ttw-music-player .more:hover {
-    color: #e95420 !important;
-
-}
+/*.ttw-music-player li.playing,*/
+/*.ttw-music-player .more:hover {*/
+    /*color: #e95420 !important;*/
+/*}*/
 
 .ttw-music-player .more {
     display: none;

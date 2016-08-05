@@ -54,6 +54,31 @@ function makeLinksOpenInNewTab() {
     }
 }
 
+function fixStyleColor() {
+    if (!document.getElementById('fix-style-color')) {
+        console.log('fixStyleColor');
+        var a = document.getElementsByTagName('a')[0];
+        var color = window.getComputedStyle(a).color;
+
+        var css = '.site-header h1 a:hover, .site-header h1 a:focus, h1, ' +
+            '.ttw-music-player .control-btn:hover, ' +
+            '.ttw-music-player .tracklist li:hover, ' +
+            '.ttw-music-player li.playing, ' +
+            '.ttw-music-player .more:hover ' +
+            '{ color: ' + color + '; }';
+        style = document.createElement('style');
+        style.id = 'fix-style-color';
+
+        if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+        } else {
+            style.appendChild(document.createTextNode(css));
+        }
+
+        document.getElementsByTagName('head')[0].appendChild(style);
+    }
+}
+
 // Don't remove this function!
 var handleReady = function () {
     createPlayer();
@@ -62,12 +87,9 @@ var handleReady = function () {
 // Don't remove this function!
 var handleLoadedAll = function () {
     makeLinksOpenInNewTab();
-
-    // handleResize();
-    // window.addEventListener('resize', handleResize);
+    fixStyleColor();
 };
 
 // Don't remove this function!
 var handleBeforeDestroy = function () {
-    // window.removeEventListener('resize', handleResize);
 };
