@@ -4,7 +4,7 @@ function handleResize(event) {
         var widgetWidth = widget.clientWidth;
         document.getElementById('netease-player').setAttribute('style', 'width: ' + widgetWidth + 'px');
     }
-};
+}
 
 function createPlayer() {
     var musicPlayer = document.getElementsByClassName('ttw-music-player')[0];
@@ -43,7 +43,7 @@ function createPlayer() {
             }
         });
     }
-};
+}
 
 function makeLinksOpenInNewTab() {
     var elems = document.getElementsByTagName('a');
@@ -56,7 +56,6 @@ function makeLinksOpenInNewTab() {
 
 function fixStyleColor() {
     if (!document.getElementById('fix-style-color')) {
-        console.log('fixStyleColor');
         var a = document.getElementsByTagName('a')[0];
         var color = window.getComputedStyle(a).color;
 
@@ -79,6 +78,27 @@ function fixStyleColor() {
     }
 }
 
+function disqusThread() {
+    if (document.getElementById('disqus_thread')) {
+        var site = router.app.site;
+        var page = router._children[1].page;
+
+        var disqus_config = function () {
+            this.page.url = page.absolute_url; // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = page.id_key; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//' + site.disqus_short_name + '.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    }
+}
+
 // Don't remove this function!
 var handleReady = function () {
     createPlayer();
@@ -88,6 +108,7 @@ var handleReady = function () {
 var handleLoadedAll = function () {
     makeLinksOpenInNewTab();
     fixStyleColor();
+    disqusThread();
 };
 
 // Don't remove this function!
