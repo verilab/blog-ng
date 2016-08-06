@@ -13,16 +13,15 @@
   <script src="//cdn.bootcss.com/vue-router/0.7.13/vue-router.min.js"></script>
   <script src="//cdn.bootcss.com/vue-resource/0.9.3/vue-resource.min.js"></script>
   <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/css/bootstrap-theme/united.min.css" rel="stylesheet">
-  <!--<link href="//bootswatch.com/cosmo/bootstrap.min.css" rel="stylesheet">-->
-  <!--<link href="//bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet">-->
-  <!--<link href="//bootswatch.com/paper/bootstrap.min.css" rel="stylesheet">-->
-  <!--<link href="//bootswatch.com/sandstone/bootstrap.min.css" rel="stylesheet">-->
-  <!--<link href="//bootswatch.com/simplex/bootstrap.min.css" rel="stylesheet">-->
-  <!--<link href="//bootswatch.com/spacelab/bootstrap.min.css" rel="stylesheet">-->
-  <!--<link href="//bootswatch.com/yeti/bootstrap.min.css" rel="stylesheet">-->
+  <!--<link href="/css/bootstrap-theme/united.min.css" rel="stylesheet">-->
+  <!--<link href="/css/bootstrap-theme/cosmo.min.css" rel="stylesheet">-->
+  <link href="/css/bootstrap-theme/flatly.min.css" rel="stylesheet">
+  <!--<link href="/css/bootstrap-theme/paper.min.css" rel="stylesheet">-->
+  <!--<link href="/css/bootstrap-theme/sandstone.min.css" rel="stylesheet">-->
+  <!--<link href="/css/bootstrap-theme/simplex.min.css" rel="stylesheet">-->
+  <!--<link href="/css/bootstrap-theme/spacelab.min.css" rel="stylesheet">-->
+  <!--<link href="/css/bootstrap-theme/yeti.css" rel="stylesheet">-->
   <link rel="stylesheet" href="/css/style.css" id="custom-style">
-  <link rel="stylesheet" href="/css/code.css">
 
   <!-- Set favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
@@ -48,15 +47,8 @@
   <!-- Set standalone -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="white">
-  <script src="/js/ios-stay-standalone.js"></script>
 
-  <!-- Prepare for music player -->
-  <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-  <script src="/music-player/jquery-jplayer/jquery.jplayer.js"></script>
-  <script src="/music-player/ttw-music-player.js"></script>
-  <link href="/music-player/css/style.css" rel="stylesheet">
-
-  <title>{{ site.title }}</title>
+  <title>Project RC</title>
 </head>
 <body>
 <div class="section">
@@ -119,10 +111,17 @@
   </div>
 </footer>
 
+<!-- Prepare for music player -->
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<script src="/music-player/jquery-jplayer/jquery.jplayer.js"></script>
+<script src="/music-player/ttw-music-player.js"></script>
+<link href="/music-player/css/style.css" rel="stylesheet">
+
 <!-- DON'T CHANGE THE ORDER OF THESE SCRIPTS -->
 <script src="/js/custom.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/template.js"></script>
-<script src="/js/route.js"></script>
+
+<script src="/js/ios-stay-standalone.js"></script>
 </body>
 </html>

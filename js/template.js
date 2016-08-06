@@ -33,3 +33,51 @@ const CustomPage = BaseComponent.extend({
     },
     template: '<template v-if="ok">\n  <div class="panel panel-primary">\n    <div class="panel-heading">\n      <h3 class="panel-title">\n        <span>Page</span>\n        <i class="fa fa-fw fa-angle-right"></i>\n      </h3>\n    </div>\n    <div class="panel-body markdown-body">\n      <article>\n        <h1>{{ page.title }}</h1>\n        <hr>\n        {{{ page.body }}}\n      </article>\n    </div>\n    <div class="panel-footer">\n      <span><i class="fa fa-fw fa-user"></i>{{ page.author }}</span>\n    </div>\n  </div>\n</template>\n<template v-else>\n  <p v-if="$loadingRouteData">努力加载中……</p>\n  <p v-else>什么都没有……</p>\n</template>'
 });
+
+const router = new VueRouter({
+    history: true,
+    saveScrollPosition: true
+});
+
+router.afterEach(function (transition) {
+    window.scrollTo(0, 0);
+});
+
+router.map({
+    '/': {
+        component: Index,
+    },
+    '/page/:id': {
+        exact: false,
+        component: Index
+    },
+    '/post/:year/:month/:day/:name': {
+        exact: false,
+        component: Post
+    },
+    '/category/:name': {
+        exact: false,
+        component: Archive.extend({
+            data: function () {
+                return {
+                    archiveName: 'Category'
+                }
+            }
+        })
+    },
+    '/tag/:name': {
+        exact: false,
+        component: Archive.extend({
+            data: function () {
+                return {
+                    archiveName: 'Tag'
+                }
+            }
+        })
+    },
+    '/*custom_page': {
+        component: CustomPage
+    }
+});
+
+router.start(App, 'html');

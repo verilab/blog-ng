@@ -10,7 +10,8 @@ const App = Vue.extend({
                 title: 'Project RC',
                 subtitle: '#include <stdrc.h>',
                 author: 'Richard Chien'
-            }
+            },
+            bootstrapTheme: 'yeti'
         }
     }
 });
@@ -60,13 +61,6 @@ const BaseComponent = Vue.extend({
         }
     },
     ready: function () {
-        // var s = document.createElement("script");
-        // s.type = "text/javascript";
-        // s.src = "/js/custom.js";
-        // s.async = true;
-        // document.getElementsByTagName('body')[0].appendChild(s);
-        // console.log(document.getElementsByClassName('col-md-8')[0].innerHTML);
-        // console.log(document.querySelector('.col-md-8'));
         handleReady();
         this.$watch('$loadingRouteData', function (newVal, oldVal) {
             if (oldVal === true && newVal === false) {
