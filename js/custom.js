@@ -79,7 +79,19 @@ function fixStyleColor() {
 }
 
 function disqusThread() {
-    if (document.getElementById('disqus_thread')) {
+    var thread = document.getElementById('disqus_thread');
+    if (thread) {
+        MutationObserver = window.MutationObserver;
+        DocumentObserver = new MutationObserver(function() {
+            var gfwNotice = document.getElementById('gfw-fucked-notice');
+            if (gfwNotice) {
+                gfwNotice.remove();
+            }
+            DocumentObserver.disconnect();
+        });
+        DocumentObserverConfig = {childList: true};
+        DocumentObserver.observe(thread, DocumentObserverConfig);
+
         var site = router.app.site;
         var page = router._children[1].page;
 
@@ -94,7 +106,7 @@ function disqusThread() {
             s.src = '//' + site.disqus_short_name + '.disqus.com/embed.js';
 
             s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
+            thread.parentElement.appendChild(s);
         })();
     }
 }
