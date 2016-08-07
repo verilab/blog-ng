@@ -54,7 +54,7 @@ const BaseComponent = Vue.extend({
     methods: {
         formatDate: function (date) {
             const d = new Date(date);
-            return d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDay();
+            return d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getUTCDate();
         },
         documentTitle: function () {
             return this.site.title;
