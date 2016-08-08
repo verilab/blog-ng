@@ -84,14 +84,8 @@ function disqusThread() {
         MutationObserver = window.MutationObserver;
         DocumentObserver = new MutationObserver(function () {
             var gfwNotice = document.getElementById('gfw-fucked-notice');
-            var blockquote = document.createElement('blockquote');
-            blockquote.innerText = 'Great minds discuss ideas, average minds discuss events, small minds discuss people.';
             if (gfwNotice) {
-                gfwNotice.parentNode.replaceChild(blockquote, gfwNotice);
-            } else {
-                if (thread.firstChild.tagName != 'BLOCKQUOTE') {
-                    thread.insertBefore(blockquote, thread.firstChild);
-                }
+                gfwNotice.remove();
             }
             DocumentObserver.disconnect();
         });
