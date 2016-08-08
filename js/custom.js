@@ -89,7 +89,9 @@ function disqusThread() {
             if (gfwNotice) {
                 gfwNotice.parentNode.replaceChild(blockquote, gfwNotice);
             } else {
-                thread.insertBefore(blockquote, thread.firstChild);
+                if (thread.firstChild.tagName != 'BLOCKQUOTE') {
+                    thread.insertBefore(blockquote, thread.firstChild);
+                }
             }
             DocumentObserver.disconnect();
         });
