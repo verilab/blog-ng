@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](LICENSE)
 
-基于 [Vue.js](http://vuejs.org/) 和 [Bootstrap](http://getbootstrap.com/) 的 [BlogA](https://github.com/richardchien/blog-a) 前端，Demo：[http://blog.richardchien.cn](http://blog.richardchien.cn)。
+基于 [Vue.js](http://vuejs.org/) 和 [Bootstrap](http://getbootstrap.com/) 的 [BlogA](https://github.com/BlogTANG/blog-a) 前端，Demo：[http://blog.richardchien.cn](http://stdrc.cc)。
 
 ## 如何使用
 
