@@ -82,10 +82,14 @@ function disqusThread() {
     var thread = document.getElementById('disqus_thread');
     if (thread) {
         MutationObserver = window.MutationObserver;
-        DocumentObserver = new MutationObserver(function() {
+        DocumentObserver = new MutationObserver(function () {
             var gfwNotice = document.getElementById('gfw-fucked-notice');
+            var blockquote = document.createElement('blockquote');
+            blockquote.innerText = 'Great minds discuss ideas, average minds discuss events, small minds discuss people.';
             if (gfwNotice) {
-                gfwNotice.remove();
+                gfwNotice.parentNode.replaceChild(blockquote, gfwNotice);
+            } else {
+                thread.insertBefore(blockquote, thread.firstChild);
             }
             DocumentObserver.disconnect();
         });
@@ -96,8 +100,8 @@ function disqusThread() {
         var page = router._children[1].page;
 
         var disqus_config = function () {
-            this.page.url = page.absolute_url; // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = page.id_key; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            this.page.url = page.absolute_url;
+            this.page.identifier = page.id_key;
         };
 
         (function () { // DON'T EDIT BELOW THIS LINE
