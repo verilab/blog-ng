@@ -6,9 +6,9 @@
 
 ## 如何使用
 
-首先需要将 BlogA 配置成 mixed 模式或 api 模式（见 [API 模式](https://github.com/richardchien/blog-a#api-模式)），并在 Nginx、Apache 等服务器里将 `/api/` 反代到 BlogA 的地址（具体配置可以看 [`sample-conf`](sample-conf) 里的示例）。
+首先需要将 BlogA 配置成 mixed 模式或 api 模式（见 [API 模式](https://github.com/richardchien/blog-a#api-模式)），~~并在 Nginx、Apache 等服务器里将 `/api/` 反代到 BlogA 的地址（具体配置可以看 [`sample-conf`](sample-conf) 里的示例）~~。
 
-然后在 `main.js` 里修改 `App` 里的默认 `site` 属性（注意这个属性是默认填充的，实际获取到 API 的数据后，会使用获取到的信息），以及紧随其后的 `sidebar-content` 的 `template`（也就是侧边栏的内容，注意因为 Vue.js 的限制，模板里面的 `<script>` 并不会起效果）。
+然后在 `main.js` 里修改 `App` 里的 `apiUrl` 属性（BlogA 后端的地址，如 `https://blog.r-c.im`，注意结尾不要加 `/`）和默认 `site` 属性（注意这个属性是默认填充的，实际获取到 API 的数据后，会使用获取到的信息），以及紧随其后的 `sidebar-content` 的 `template`（也就是侧边栏的内容，注意因为 Vue.js 的限制，模板里面的 `<script>` 并不会起效果）。
 
 修改 `favicons` 文件夹里的内容，建议使用 [RealFaviconGenerator](https://realfavicongenerator.net/) 在线生成。
 

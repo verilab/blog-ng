@@ -6,6 +6,7 @@ Vue.http.headers.common['Accept'] = 'application/json';
 const App = Vue.extend({
     data: function () {
         return {
+            apiUrl: 'https://blog.r-c.im',
             site: {
                 title: 'Project RC',
                 subtitle: '#include <stdrc.h>',
@@ -23,6 +24,7 @@ App.component('sidebar-content', {
 const BaseComponent = Vue.extend({
     data: function () {
         return {
+            apiUrl: this.$router.app.apiUrl,
             ok: false,
             page: null
         }
@@ -39,7 +41,7 @@ const BaseComponent = Vue.extend({
     },
     route: {
         data: function (transition) {
-            return this.$http.get('/api' + transition.to.path)
+            return this.$http.get(this.apiUrl + transition.to.path)
                 .then(function (response) {
                     const json = response.json();
                     this.ok = json.ok;
