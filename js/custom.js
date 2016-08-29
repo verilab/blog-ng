@@ -1,11 +1,3 @@
-function handleResize(event) {
-    var widget = document.querySelector('#sidebar .panel-body');
-    if (widget) {
-        var widgetWidth = widget.clientWidth;
-        document.getElementById('netease-player').setAttribute('style', 'width: ' + widgetWidth + 'px');
-    }
-}
-
 function createPlayer() {
     var musicPlayer = document.getElementsByClassName('ttw-music-player')[0];
     if (!musicPlayer) {
@@ -65,7 +57,7 @@ function fixStyleColor() {
             '.ttw-music-player li.playing, ' +
             '.ttw-music-player .more:hover ' +
             '{ color: ' + color + '; }';
-        style = document.createElement('style');
+        var style = document.createElement('style');
         style.id = 'fix-style-color';
 
         if (style.styleSheet) {
@@ -82,15 +74,14 @@ function disqusThread() {
     var thread = document.getElementById('disqus_thread');
     if (thread) {
         MutationObserver = window.MutationObserver;
-        DocumentObserver = new MutationObserver(function () {
+        var documentObserver = new MutationObserver(function () {
             var gfwNotice = document.getElementById('gfw-fucked-notice');
             if (gfwNotice) {
                 gfwNotice.remove();
             }
-            DocumentObserver.disconnect();
+            documentObserver.disconnect();
         });
-        DocumentObserverConfig = {childList: true};
-        DocumentObserver.observe(thread, DocumentObserverConfig);
+        documentObserver.observe(thread, {childList: true});
 
         var site = router.app.site;
         var page = router._children[1].page;
