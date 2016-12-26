@@ -3,25 +3,25 @@ function createPlayer() {
     if (!musicPlayer) {
         var playlist = [
             {
-                mp3: '/audio/1.mp3',
+                mp3: 'audio/1.mp3',
                 title: 'Different Colors',
                 artist: 'Walk The Moon',
                 duration: '3:42'
             },
             {
-                mp3: '/audio/2.mp3',
+                mp3: 'audio/2.mp3',
                 title: 'Cake By The Ocean',
                 artist: 'DNCE',
                 duration: '3:38'
             },
             {
-                mp3: '/audio/3.mp3',
+                mp3: 'audio/3.mp3',
                 title: 'Can\'t Stop The Feeling',
                 artist: 'Justin Timberlake',
                 duration: '3:56'
             },
             {
-                mp3: '/audio/4.mp3',
+                mp3: 'audio/4.mp3',
                 title: 'Blame It On The Girls',
                 artist: 'Mika',
                 duration: '3:18'
@@ -31,7 +31,7 @@ function createPlayer() {
             autoPlay: false,
             description: '',
             jPlayer: {
-                swfPath: '/music-player/jquery-jplayer'
+                swfPath: 'music-player/jquery-jplayer'
             }
         });
     }

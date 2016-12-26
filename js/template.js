@@ -35,7 +35,6 @@ const CustomPage = BaseComponent.extend({
 });
 
 const router = new VueRouter({
-    history: true,
     saveScrollPosition: true
 });
 
